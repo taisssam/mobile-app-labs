@@ -5,7 +5,7 @@ import dev.pikmitrade.domain.model.trading.Trade
 import dev.pikmitrade.domain.repository.NotificationsRepository
 
 class NoOpNotificationsRepository : NotificationsRepository {
-    override suspend fun notifyTrade(trade: Trade) {}
-    override suspend fun notifyPriceChange(quote: Quote) {}
-    override suspend fun cancelAll() {}
+    override fun notifyTrade(trade: Trade) {}
+    override fun notifyPriceChange(quote: Quote) {}
+    override fun cancelAll() {}
 }

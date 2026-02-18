@@ -9,15 +9,23 @@ class InMemorySettingsRepository : SettingsRepository {
     private var notifications = true
     private var selected: AssetType? = null
 
-    override suspend fun setThemeDark(enabled: Boolean) { dark = enabled }
-    override suspend fun isThemeDark(): Boolean = dark
+    override fun setThemeDark(enabled: Boolean) {
+        dark = enabled
+    }
+    override fun isThemeDark(): Boolean = dark
 
-    override suspend fun setLanguageCode(code: String) { lang = code }
-    override suspend fun getLanguageCode(): String = lang
+    override fun setLanguageCode(code: String) {
+        lang = code
+    }
+    override fun getLanguageCode(): String = lang
 
-    override suspend fun setNotificationsEnabled(enabled: Boolean) { notifications = enabled }
-    override suspend fun isNotificationsEnabled(): Boolean = notifications
+    override fun setNotificationsEnabled(enabled: Boolean) {
+        notifications = enabled
+    }
+    override fun isNotificationsEnabled(): Boolean = notifications
 
-    override suspend fun setSelectedMarket(assetType: AssetType) { selected = assetType }
-    override suspend fun getSelectedMarket(): AssetType? = selected
+    override fun setSelectedMarket(assetType: AssetType) {
+        selected = assetType
+    }
+    override fun getSelectedMarket(): AssetType? = selected
 }

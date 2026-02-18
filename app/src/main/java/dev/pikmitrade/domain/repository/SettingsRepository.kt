@@ -3,15 +3,15 @@ package dev.pikmitrade.domain.repository
 import dev.pikmitrade.domain.model.market.AssetType
 
 interface SettingsRepository {
-    suspend fun setThemeDark(enabled: Boolean)
-    suspend fun isThemeDark(): Boolean
+    fun setThemeDark(enabled: Boolean)
+    fun isThemeDark(): Boolean
 
-    suspend fun setLanguageCode(code: String)
-    suspend fun getLanguageCode(): String
+    fun setLanguageCode(code: String)
+    fun getLanguageCode(): String
 
-    suspend fun setNotificationsEnabled(enabled: Boolean)
-    suspend fun isNotificationsEnabled(): Boolean
+    fun setNotificationsEnabled(enabled: Boolean)
+    fun isNotificationsEnabled(): Boolean
 
-    suspend fun setSelectedMarket(assetType: AssetType)
-    suspend fun getSelectedMarket(): AssetType?
+    fun setSelectedMarket(assetType: AssetType)
+    fun getSelectedMarket(): AssetType?
 }
