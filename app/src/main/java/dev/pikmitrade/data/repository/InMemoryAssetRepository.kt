@@ -32,4 +32,24 @@ class InMemoryAssetRepository : AssetRepository {
     fun putCandles(assetId: String, interval: CandleInterval, list: List<Candle>) {
         candles[key(assetId, interval)] = list.toMutableList()
     }
+
+    fun seedAssets(items: List<Asset>) {
+        items.forEach { assets[it.id] = it }
+    }
+
+    fun seedQuotes(items: List<Quote>) {
+        items.forEach { quotes[it.assetId] = it }
+    }
+
+    fun seedCandles(items: List<Candle>, interval: CandleInterval) {
+        if (items.isEmpty()) return
+        val byAsset = items.groupBy { it.assetId }
+        byAsset.forEach { (assetId, list) -> candles[key(assetId, interval)] = list.toMutableList() }
+    }
+
+    fun clearAll() {
+        assets.clear()
+        quotes.clear()
+        candles.clear()
+    }
 }

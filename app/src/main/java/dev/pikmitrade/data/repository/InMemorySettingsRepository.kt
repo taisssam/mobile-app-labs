@@ -28,4 +28,11 @@ class InMemorySettingsRepository : SettingsRepository {
         selected = assetType
     }
     override fun getSelectedMarket(): AssetType? = selected
+
+    fun reset() {
+        dark = false
+        lang = "en"
+        notifications = true
+        selected = null
+    }
 }

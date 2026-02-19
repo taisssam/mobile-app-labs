@@ -14,7 +14,7 @@ class InMemoryTradeRepository : TradeRepository {
     override fun getTrades(): List<Trade> = trades.toList()
 
     override fun getTradesByUser(userId: String): List<Trade> =
-            trades.filter { it.toString().contains(userId) }
+            trades.filter { it.userId == userId }
 
     override fun clearTrades() {
         trades.clear()
